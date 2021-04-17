@@ -58,10 +58,6 @@
     - Margin.
  - Padding.
  
- **4. Tratamento da SeekBar.**
- - Listener.
- - Método.
- 
  ---
 
  # Prints do Aplicativo 
