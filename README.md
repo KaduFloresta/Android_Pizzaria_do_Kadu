@@ -28,20 +28,15 @@
 ## Pizzaria do Kadu
 
 ### Atividade: Menu Pizzaria
-Criar uma tela principal para obter as informaçõesdos sabores de pizzas:
-  - Os dados são:  Código, nome da pizza, uma descriçãodos itens da pizza, tamanho e preço.
-
-  - Todos os campos são de preenchimento obrigatório.
-
-  - Emitir um Toast quando o usuário pressionar o botão “gravar”, com todas as informações coletadas, informado que os dados foram gravados, limpe a tela para permitir o preenchimento de novos dados.
-
-  - Armazene os dados de cada pizza em um ArrayList.
-
-  - Adicione um botão chamado “Relatório Menu”, onde iráabrir uma nova tela comtodos os itens cadastrados.
-
-  - Apresentar os itens em uma Listview conforme a imagemabaixo, seja criativo naapresentação das telas.
-
-  - **A entrega deverá ser feita via GitHub.**
+- Criar uma tela principal para obter as informaçõesdos sabores de pizzas:
+    - [X] Os dados são:  Código, nome da pizza, uma descriçãodos itens da pizza, tamanho e preço.
+    - [ ] Todos os campos são de preenchimento obrigatório.
+    - [ ] Emitir um Toast quando o usuário pressionar o botão “gravar”, com todas as informações coletadas, informado que os dados foram gravados.          
+    - [ ] Limpe a tela para permitir o preenchimento de novos dados.
+    - [X] Armazene os dados de cada pizza em um ArrayList.
+    - [ ] Adicione um botão chamado “Relatório Menu”, onde irá abrir uma nova tela comtodos os itens cadastrados.
+    - [ ] Apresentar os itens em uma Listview conforme a imagem abaixo, seja criativo na apresentação das telas.
+    - [ ] **A entrega deverá ser feita via GitHub.**
   
   ---
 
@@ -49,12 +44,12 @@ Criar uma tela principal para obter as informaçõesdos sabores de pizzas:
   - ImageView.
   - TextView.
   - TextInputLayout.
+  - RadioButton.
   - Button.
   - RecyclerView.
 
 **2. Orientação de tela:**
   - Portrait.
-  - Landscape.
  
 **3. Posionaento dos componentes:**
  - Constraint Widget.
