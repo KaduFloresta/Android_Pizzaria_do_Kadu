@@ -1,65 +1,41 @@
 package com.example1.androidpizzaria.activity.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example1.androidpizzaria.R;
 import com.example1.androidpizzaria.activity.model.Pizza;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
-
-    private List<Pizza> listaPizzas;
-
-    public Adapter(List<Pizza> lista) {
-        this.listaPizzas = lista;
-
+public class Adapter extends ArrayAdapter<Pizza> {
+    public Adapter(Context context, ArrayList<Pizza> pizzas) {
+        super(context, 0, pizzas);
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Convertendo em um objeto View
-        View itemLista = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.adapter_lista,
-                parent,
-                false
-        );
-        return new MyViewHolder(itemLista);
-    }
-
-    @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-
-        Pizza pizza = listaPizzas.get(position);
-        holder.nomePizza.setText(pizza.getNomePizza().toString());
-        holder.ingredientesPizza.setText(pizza.getIngredientesPizza().toString());
-        holder.valorPizza.setText(pizza.getValorPizza().toString());
-
-    }
-
-    // Retorna a quantidade de itens
-    @Override
-    public int getItemCount() {
-        return listaPizzas.size();
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView nomePizza;
-        TextView ingredientesPizza;
-        TextView valorPizza;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-
-            nomePizza = itemView.findViewById(R.id.txtNome);
-            ingredientesPizza = itemView.findViewById(R.id.txtIngredientes);
-            valorPizza = itemView.findViewById(R.id.txtValor);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Pizza pizza = getItem(position);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_lista, parent, false);
         }
+
+        TextView codigoPizza = (TextView) convertView.findViewById(R.id.txtCodigo);
+        TextView nomePizza = (TextView) convertView.findViewById(R.id.txtNome);
+        TextView tamanhoPizza = (TextView) convertView.findViewById(R.id.txtTamanho);
+        TextView ingredientesPizza = (TextView) convertView.findViewById(R.id.txtIngredientes);
+        TextView valorPizza = (TextView) convertView.findViewById(R.id.txtValor);
+
+        codigoPizza.setText(pizza.getCódigoPizza());
+        nomePizza.setText(pizza.getNomePizza());
+        tamanhoPizza.setText("Tamanho: " + pizza.getTamanhoPizza());
+        ingredientesPizza.setText(" " + pizza.getIngredientesPizza());
+        valorPizza.setText("R$ " + pizza.getValorPizza());
+
+        return convertView;
     }
 }

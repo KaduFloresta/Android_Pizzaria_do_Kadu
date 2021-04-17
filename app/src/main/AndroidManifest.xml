@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidPizzaria">
         <activity android:name=".activity.activity.DataActivity"></activity>
-        <activity android:name=".activity.activity.MainActivity">
+        <activity android:name=".activity.activity.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

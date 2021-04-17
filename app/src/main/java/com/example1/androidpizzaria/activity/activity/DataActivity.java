@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
@@ -25,19 +26,13 @@ import java.util.List;
 
 public class DataActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private List<Pizza> listaPizzas = new ArrayList<>();
-    private Button btnVoltar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        recyclerView = findViewById(R.id.recyclerPizzas);
-
-
-        btnVoltar = findViewById(R.id.btnVoltar);
+        ListView listaPizza = (ListView) findViewById(R.id.listaPizza);
+        Button btnVoltar = (Button) findViewById(R.id.btnVoltar);
 
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,48 +43,20 @@ public class DataActivity extends AppCompatActivity {
             }
         });
 
-        // Configurar Adapter
-        Adapter adapter = new Adapter(listaPizzas);
+        Bundle args = getIntent().getExtras();
+        ArrayList<Pizza> arrayOfPizzas = (ArrayList<Pizza>) args.getSerializable("array");
+        Log.i("TESTE", this.getLocalClassName() + " Entrou aqui: " + arrayOfPizzas.size());
 
-        // Configurar RecycleView
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
-        recyclerView.setAdapter(adapter);
+        Adapter adapter = new Adapter(this, arrayOfPizzas);
+        listaPizza.setAdapter(adapter);
 
-        // Eventos de click
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(
-                        getApplicationContext(),
-                        recyclerView,
-                        new RecyclerItemClickListener.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(View view, int position) {
-                                Pizza filme = listaPizzas.get(position);
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "NOME: " + filme.getNomePizza(),
-                                        Toast.LENGTH_SHORT
-                                ).show();
-                            }
-
-                            @Override
-                            public void onLongItemClick(View view, int position) {
-                                Pizza filme = listaPizzas.get(position);
-                                Toast.makeText(
-                                        getApplicationContext(),
-                                        "VALOR: " + filme.getValorPizza(),
-                                        Toast.LENGTH_LONG
-                                ).show();
-                            }
-
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                            }
-                        }
-                )
-        );
+        // Adicionar o clique na lista
+        listaPizza.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String valorSelecionado = listaPizza.getItemAtPosition(i).toString();
+                Toast.makeText(getApplicationContext(), valorSelecionado, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
