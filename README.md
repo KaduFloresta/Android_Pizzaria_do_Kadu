@@ -31,12 +31,12 @@
 - Criar uma tela principal para obter as informaçõesdos sabores de pizzas:
     - [X] Os dados são:  Código, nome da pizza, uma descriçãodos itens da pizza, tamanho e preço.
     - [ ] Todos os campos são de preenchimento obrigatório.
-    - [ ] Emitir um Toast quando o usuário pressionar o botão “gravar”, com todas as informações coletadas, informado que os dados foram gravados.          
-    - [ ] Limpe a tela para permitir o preenchimento de novos dados.
+    - [X] Emitir um Toast quando o usuário pressionar o botão “gravar”, com todas as informações coletadas, informado que os dados foram gravados.          
+    - [X] Limpe a tela para permitir o preenchimento de novos dados.
     - [X] Armazene os dados de cada pizza em um ArrayList.
-    - [ ] Adicione um botão chamado “Relatório Menu”, onde irá abrir uma nova tela comtodos os itens cadastrados.
-    - [ ] Apresentar os itens em uma Listview conforme a imagem abaixo, seja criativo na apresentação das telas.
-    - [ ] **A entrega deverá ser feita via GitHub.**
+    - [X] Adicione um botão chamado “Relatório Menu”, onde irá abrir uma nova tela comtodos os itens cadastrados.
+    - [X] Apresentar os itens em uma Listview conforme a imagem abaixo, seja criativo na apresentação das telas.
+    - [X] **A entrega deverá ser feita via GitHub.**
   
   ---
 
@@ -46,7 +46,7 @@
   - TextInputLayout.
   - RadioButton.
   - Button.
-  - RecyclerView.
+  - ListView.
 
 **2. Orientação de tela:**
   - Portrait.
@@ -64,4 +64,5 @@
  
  ---
 
- # Prints do Aplicativo
+ # Prints do Aplicativo 
+ <img src="https://github.com/KaduFloresta/Android_Pizzaria_do_Kadu/blob/master/app/src/main/res/drawable/print.png" alt="drawing" width="360"/><img src="https://github.com/KaduFloresta/Android_Pizzaria_do_Kadu/blob/master/app/src/main/res/drawable/print2.png" alt="drawing" width="360"/>
