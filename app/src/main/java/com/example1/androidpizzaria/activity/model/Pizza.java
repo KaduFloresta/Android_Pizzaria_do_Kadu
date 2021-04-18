@@ -22,7 +22,6 @@ public class Pizza implements Parcelable {
         this.valorPizza = valorPizza;
     }
 
-
     protected Pizza(Parcel in) {
         códigoPizza = in.readString();
         nomePizza = in.readString();
