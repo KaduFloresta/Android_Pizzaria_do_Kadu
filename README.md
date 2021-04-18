@@ -30,7 +30,7 @@
 ### Atividade: Menu Pizzaria
 - Criar uma tela principal para obter as informaçõesdos sabores de pizzas:
     - [X] Os dados são:  Código, nome da pizza, uma descriçãodos itens da pizza, tamanho e preço.
-    - [ ] Todos os campos são de preenchimento obrigatório.
+    - [X] Todos os campos são de preenchimento obrigatório.
     - [X] Emitir um Toast quando o usuário pressionar o botão “gravar”, com todas as informações coletadas, informado que os dados foram gravados.          
     - [X] Limpe a tela para permitir o preenchimento de novos dados.
     - [X] Armazene os dados de cada pizza em um ArrayList.
