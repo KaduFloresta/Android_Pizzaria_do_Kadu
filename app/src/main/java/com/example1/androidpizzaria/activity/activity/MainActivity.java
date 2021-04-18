@@ -64,27 +64,34 @@ public class MainActivity extends AppCompatActivity {
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // Validar campos
-
                 String radiovalue = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
-                // Add item to adapter
-                Pizza newPizza = new Pizza(
-                        codigoPizza.getText().toString(),
-                        nomePizza.getText().toString(),
-                        ingredientesPizza.getText().toString(),
-                        radiovalue,
-                        valorPizza.getText().toString()
-                );
 
+                // Tratamento de campos vazios ou preenchido de forma errada.
+                if (codigoPizza.length() == 0) {
+                    abrirToast("Digite o nome completo da pizza!");
+                } else if (nomePizza.length() == 0) {
+                    abrirToast("Digite o nome da pizza!");
+                } else if (nomePizza.length() < 5) {
+                    abrirToast("Digite o nome completo da pizza!");
+                } else if ((ingredientesPizza.length() == 0) || (ingredientesPizza.length() < 10)) {
+                    abrirToast("Digite todos os ingredientes da pizza!");
+                } else if (radiovalue.equals(false)) {
+                    abrirToast("Digite o valor da pizza!");
+//                } else if (valorPizza < 0) {
+//                    abrirToast("Digite o valor da pizza!");
+                } else {
 
-                arrayPizzas.add(newPizza);
-
-                adapter.clear();
-                for (Pizza a : arrayPizzas) {
-                    adapter.add(a);
+                    // Add item to adapter
+                    Pizza newPizza = new Pizza(
+                            codigoPizza.getText().toString(),
+                            nomePizza.getText().toString(),
+                            ingredientesPizza.getText().toString(),
+                            radiovalue,
+                            valorPizza.getText().toString()
+                    );
+                    arrayPizzas.add(newPizza);
+                    abrirToast("Pizza Cadastrada!");
                 }
-                abrirToast("Pizza Cadastrada!");
             }
         });
 

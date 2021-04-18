@@ -11,19 +11,20 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#7CFF4444"
+        android:background="#59070000"
         android:padding="10dp"
         tools:context=".activity.activity.MainActivity">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginLeft="36dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="2dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginRight="36dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#400B0000"
             android:scaleType="fitXY"
             android:src="@drawable/logo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +40,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="@android:color/holo_red_light"
+            android:background="@color/cardview_dark_background"
             android:gravity="center_horizontal"
             android:text="Cadastre sua pizza"
             android:textColor="@color/white"
@@ -96,6 +97,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -117,7 +119,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="#66FF4444"
+            android:background="@color/cardview_dark_background"
             android:gravity="center_horizontal"
             android:text="Tamanho"
             android:textColor="@color/white"
@@ -136,7 +138,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:background="#66FF4444"
+            android:background="#B0424242"
             android:gravity="center|top"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -151,7 +153,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:text="Broto"
-                android:textSize="14sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                app:buttonTint="@color/white" />
 
             <RadioButton
                 android:id="@+id/radioTamMedia"
@@ -160,7 +164,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:text="Média"
-                android:textSize="14sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                app:buttonTint="@color/white" />
 
             <RadioButton
                 android:id="@+id/radioTamGrande"
@@ -169,7 +175,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:text="Grande"
-                android:textSize="14sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                app:buttonTint="@color/white" />
 
             <RadioButton
                 android:id="@+id/radioTamFamilia"
@@ -178,7 +186,9 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:text="Família"
-                android:textSize="14sp" />
+                android:textColor="@android:color/background_light"
+                android:textSize="14sp"
+                app:buttonTint="@color/white" />
 
         </RadioGroup>
 
@@ -200,7 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Digite o valor da pizza"
-                android:inputType="number" />
+                android:inputType="numberDecimal" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

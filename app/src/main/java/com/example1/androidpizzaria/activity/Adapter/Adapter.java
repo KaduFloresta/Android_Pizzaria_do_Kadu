@@ -2,6 +2,7 @@ package com.example1.androidpizzaria.activity.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -37,5 +38,7 @@ public class Adapter extends ArrayAdapter<Pizza> {
         valorPizza.setText("R$ " + pizza.getValorPizza());
 
         return convertView;
+
+
     }
 }
